@@ -1,19 +1,16 @@
 
 
 
-def submission(predictions, submission_name):
+def submission(predictions, submission_filename):
   """Turns predictions into submittable format for Kaggle competition
       Parameters:
-             p: training set
-             test: testing set
-             str(dummycolumn1): dummy variable you want removed
-             str(dummycolumn2): dummy variable you want removed
-          Prints: Important features and predictions for training and testing set
-
+             predictions: test predictions for submission
+             submission_filename: .csv filename
+           
           Returns:
-          Predicted y and probability of y for training and testing data
+          CSV for submission
           """
   kaggleattempt = predictions.copy()
   kaggleattempt.index +=61006
-  kaggleattempt.rename(columns={ kaggleattempt.columns[1]: 'Cover_Type' }, inplace = True)
+  kaggleattempt.rename(columns={ kaggleattempt.columns[0]: 'Cover_Type' }, inplace = True)
   return kaggleattempt.to_csv(submission_name, index=True, index_label='Index')
