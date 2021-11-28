@@ -10,6 +10,16 @@ def separate_multi(train, column):
   return x, y
 
 def multi_regression(regression, x, y, test):
+   """Runs a logistic regression on your chosen data
+    Parameters:
+           regression: your model which should be defined prior
+           x: training data
+           y: target variable
+           test: testing data
+        Prints: Important features and predictions for training and testing set
+        Returns:
+        Predicted y for training and testing data
+        """
     regression.fit(x, y)
     #print("Intercept is:", regression.intercept_)
     y_hat = regression.predict(x)
