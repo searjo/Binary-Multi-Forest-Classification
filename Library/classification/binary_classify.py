@@ -53,16 +53,16 @@ Parameters:
     output_test = pd.concat([pred_test, pred_test_prob], axis=1)
     print(output_test)
 
-    # Report which variable impacts more on results
-    importance = regression.coef_[0]
-    # summarize feature importance
-    for i, v in enumerate(importance):
-        print('Feature: %0d, Score: %.5f' % (i, v))
-    # plot feature importance
-    pyplot.bar([x for x in range(len(importance))], importance)
-    pyplot.show()
-
-    return y_hat, y_hat_prob, pred_test, pred_test_prob
+def feature_impact(x, regression):
+        """Provides insight on the coefficients and impact of certain features
+           x: training set
+           regression: model used for fitting regression
+        Returns:
+        Bar plot of feature impact as well as table format for specific values
+        """
+  feature_impact = pd.DataFrame({"Feature":x.columns.tolist(),"Coefficients":regression.coef_[0]})
+  print(feature_impact.plot.bar(x='Feature', y='Coefficients', color='green'))
+  return feature_impact
 
 def scale_min2dum(train, test, dummycolumn1, dummycolumn2):
     """Scales the data and removes two dummies to prevent them from being scaled
