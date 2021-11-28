@@ -16,12 +16,13 @@ Parameters:
     return x, y
 
 
-def binary_regression(regression, x, y):
+def binary_regression(regression, x, y, test):
 """Runs a logistic regression on your chosen data
 Parameters:
        regression: your model which should be defined prior
        x: training data
        y: target variable
+       test: test data
     Prints: Important features and predictions for training and testing set
 
     Returns:
