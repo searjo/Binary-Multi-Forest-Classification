@@ -13,4 +13,4 @@ def submission(predictions, submission_filename):
   kaggleattempt = predictions.copy()
   kaggleattempt.index +=61006
   kaggleattempt.rename(columns={ kaggleattempt.columns[0]: 'Cover_Type' }, inplace = True)
-  return kaggleattempt.to_csv(submission_name, index=True, index_label='Index')
+  return kaggleattempt.to_csv(submission_filename, index=True, index_label='Index')
