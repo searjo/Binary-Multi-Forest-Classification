@@ -64,7 +64,7 @@ Parameters:
 
     return y_hat, y_hat_prob, pred_test, pred_test_prob
 
-def scale_removetwodummies(train, test, dummycolumn1, dummycolumn2):
+def scale_min2dum(train, test, dummycolumn1, dummycolumn2):
     """Scales the data and removes two dummies to prevent them from being scaled
     Parameters:
            train: training set
