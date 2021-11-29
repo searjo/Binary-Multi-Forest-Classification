@@ -1,0 +1,8 @@
+README.md
+setup.py
+libjs/__init__.py
+libjs/myfunctions.py
+libjs.egg-info/PKG-INFO
+libjs.egg-info/SOURCES.txt
+libjs.egg-info/dependency_links.txt
+libjs.egg-info/top_level.txt
